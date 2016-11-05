@@ -12,6 +12,7 @@ public class ContactMeGui extends JFrame
 	private JTextField passwordTF,reEnterPassTF;
 	private JButton sendB, exitB, clearB;
 	private JRadioButton genderSelectorM, genderSelectorF;
+	private ButtonGroup genderGroup;
 
 	private SendButtonHandler sbHandler;
 	private ExitButtonHandler ebHandler;
@@ -45,6 +46,9 @@ public class ContactMeGui extends JFrame
 		//SPecify handlers for each button and add (register) ActionListeners to each button.
 		genderSelectorM = new JRadioButton("Male");
 		genderSelectorF = new JRadioButton("Female");
+		genderGroup = new ButtonGroup();
+		genderGroup.add(genderSelectorM);
+		genderGroup.add(genderSelectorF);
 		sendB = new JButton("Send");
 		sbHandler = new SendButtonHandler();
 		sendB.addActionListener(sbHandler);
@@ -88,10 +92,11 @@ public class ContactMeGui extends JFrame
 		pane.add(messageTF);
 		
 		pane.add(genderSelectorL);
+		
 		pane.add(nullSpace);
 		pane.add(genderSelectorM);
 		pane.add(genderSelectorF);
-		
+
 		
 
 		pane.add(menuBar);
